@@ -16,6 +16,6 @@
 
         2️⃣ Clone it to your machine
 
-        3️⃣ Run this program
+        3️⃣ Go with your terminal in your cloned repo and type the alias you choose (rb in this example)
 
         4️⃣ Tadam ! You have a folder ready to code in Ruby 🤘🏻
