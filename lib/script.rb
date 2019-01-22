@@ -27,14 +27,21 @@ end
 
 
 
-#4 Créer un dossier lib
-def lib
+#4 Créer les folders
+def folder
 	system("mkdir lib")
+	system("mkdir lib/app")
+	system("mkdir lib/views")
+	system("mkdir db")
 end
 
 #5 Créer un fichier app.rb dans le dossier lib
 def app
-	system("touch lib/app.rb")
+	file = File.open('app.rb', 'a+')
+	file.puts("require 'bundler'")
+	file.puts("Bundler.require")
+	file.puts("$:.unshift File.expand_path('./../lib', __FILE__)")
+	file.close
 end
 
 
@@ -54,7 +61,7 @@ end
 #8 Git le dossier complet avec comme message du commit "initalisation de "nom du projet"
 def git
 	system("git add .")
-	system("git commit -m 'init project'")
+	system("git commit -m 'first commit init project folder'")
 	system("git push origin master")
 	
 end
@@ -71,16 +78,15 @@ end
 #ruby /Users/arthurbenoit/Desktop/tout/GIT/ruby-folder-init/lib/script.rb
 
 
-# méthode qui contrôle le programme
+# méthodes qui contrôle le programme
 def perform
 
+	folder
+	gitignore
 	gemfile
 	bundle
 	rspec
-	lib
 	app
-	app_spec
-	gitignore
 	git
 	control
 end
